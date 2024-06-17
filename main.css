@@ -58,6 +58,7 @@ pre {
 header {
   display: flex;
   flex-direction: column;
+  gap: 20px;
   justify-content: space-between;
   & h1 {
     margin: 0;
