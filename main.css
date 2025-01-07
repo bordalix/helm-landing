@@ -58,7 +58,7 @@ pre {
 header {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 50px;
   justify-content: space-between;
   & h1 {
     margin: 0;
@@ -74,25 +74,27 @@ header {
     line-height: 1.5;
   }
   & p,
-  & > div button {
+  & > div a.button {
     margin-bottom: 30px;
   }
-  & .heroImg img {
-    height: auto;
-    width: 100%;
+  & .heroImg {
+    & img {
+      max-width: 100%;
+    }
   }
 }
 
-button {
+a.button {
   background: none;
   border: 2px solid var(--color-font-default);
   border-radius: 5px;
   color: var(--color-font-default);
   cursor: pointer;
+  display: inline-block;
   font-weight: 700;
-  font: inherit;
-  min-width: 8rem;
+  min-width: 4rem;
   padding: 10px 20px;
+  text-align: center;
   transition: all 0.3s ease-out;
   &.inverted {
     background-color: var(--color-font-default);
@@ -126,8 +128,8 @@ section {
 
 @media (min-width: 640px) {
   header {
-    flex-direction: row;
-    align-items: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin-bottom: 50px;
     & h1,
     & h2,
@@ -136,11 +138,7 @@ section {
       max-width: 32rem;
     }
     & .heroImg {
-      display: flex;
-      justify-content: flex-end;
-      & > img {
-        height: 17rem;
-      }
+      padding-left: 3rem;
     }
   }
 }
@@ -156,12 +154,6 @@ section {
     & p {
       font-size: 24px;
     }
-    & .heroImg img {
-      height: 24rem;
-    }
-  }
-  .container {
-    max-width: 1024px;
   }
   ul {
     font-size: 18px;
@@ -173,5 +165,11 @@ section {
     & p {
       font-size: 18px;
     }
+  }
+}
+
+@media (min-width: 1137px) {
+  .container {
+    max-width: 1024px;
   }
 }
