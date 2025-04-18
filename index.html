@@ -148,6 +148,17 @@
         }
       }
 
+      details {
+        font-size: 18px;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        & p {
+          margin-top: 1rem;
+          padding: 0;
+        }
+      }
+
       @media (min-width: 640px) {
         header {
           display: grid;
@@ -284,9 +295,66 @@ $ yarn start
           <li><a href="https://github.com/bordalix/helm-wallet">https://github.com/bordalix/helm-wallet</a></li>
           <li><a href="https://bitbucket.org/bordalix/helm-wallet">https://bitbucket.org/bordalix/helm-wallet</a></li>
         </ul>
-        <h2>Declaration of interest</h2>
+        <h1>Declaration of interest</h1>
         <p>I receive a small percentage of Boltz fees for all payments with Helm's referral id.</p>
+        <h1>FAQ</h1>
+        <details>
+          <summary>Why Liquid?</summary>
+          <p>
+            Liquid is a sidechain of Bitcoin that allows for fast and cheap transactions. Fees are historically low and
+            blocks are mined at a fixed interval of 1 minute.
+          </p>
+        </details>
+        <details>
+          <summary>Why so many domains?</summary>
+          <p>
+            The code is mirrored across multiple domains for redundancy and censorship resistance. When it reaches the
+            version 1 milestone, I will upload it to IPFS for greater resilience.
+          </p>
+          <p>
+            The app is a PWA, which means it can be installed on your computer or mobile phone. You can run it from your
+            own computer, so you don't need to trust me or anyone else.
+          </p>
+          <p>
+            Having said that, the app is deployed in more than one domain, again for redundancy and censorship
+            resistance, that you can use right now.
+          </p>
+        </details>
+        <details>
+          <summary>How to restore a wallet?</summary>
+          <p>To restore a wallet, you just need to insert your mnemonic.</p>
+          <p>
+            Hint: copy your mnemonic to the clipboard, click on word #1 input and paste the entire mnemonic. The app
+            will understand what you are trying to achive and will automatically break the mnemonic into words and fill
+            the other inputs.
+          </p>
+        </details>
+        <details>
+          <summary>Why do I need a password?</summary>
+          <p>
+            The password is used to encrypt your mnemonic on browser's local storage. When you open the app, it doesn't
+            know your secret keys, so it needs to ask for the password to decrypt them.
+          </p>
+          <p>
+            Having said that, the app knows your public key, so you can receive funds without the password. To send
+            funds you will need to insert the password.
+          </p>
+        </details>
+        <details>
+          <summary>Forgot the password, what can I do?</summary>
+          <p>You need to restore the app with your mnemonic and choose a new password.</p>
+        </details>
+        <details>
+          <summary>Why is the Send button grayed out?</summary>
+          <p>The button will be enabled as soon as you have funds in your wallet.</p>
+        </details>
         <p>Critics and suggestions are welcome.</p>
+        <p>
+          Find me on
+          <a href="https://github.com/bordalix">Github</a>,
+          <a href="https://njump.me/npub1vt803quxxq32fuwkp42g2lyaw2t9qupvnl3z0vyc3s9kudkyhn8qt28cxv">Nostr</a>,
+          <a href="https://stacker.news/bordalix">Stacker News</a> or <a href="https://x.com/bordalix">X</a>.
+        </p>
       </section>
     </main>
   </body>
