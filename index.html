@@ -260,12 +260,13 @@
           something for the service they provide, so there are fees to be paid:
         </p>
         <ul>
-          <li>The average cost for sending or receiving a payment is around 40 sats plus 0.1% of the amount;</li>
+          <li>The minimum cost for sending a payment is around 200 sats;</li>
+          <li>The average cost for sending or receiving a payment is around 400 sats plus 0.1% of the amount;</li>
           <li>
             Transactions between Helm wallets don't pay <a href="https://boltz.exchange/">Boltz</a> fees but can take up
             to 1 minute to complete;
           </li>
-          <li>Amounts are limited between 1.000 and 25.000.000 sats.</li>
+          <li>Boltz swaps are limited between 1.000 and 25.000.000 sats.</li>
         </ul>
         <h2>Main advantages</h2>
         <p>
@@ -278,7 +279,10 @@
           <a href="https://boltz.exchange/">Boltz</a> and the chain explorers.
         </p>
         <h1>Try it</h1>
-        <p>The app is deployed in more than one domain for redundancy and censorship resistance:</p>
+        <p>
+          To minimize censorship, this app is available in different urls. You can restore your mnemonic on any of this
+          urls and you will get your coins and transaction list:
+        </p>
         <ul>
           <li><a href="https://helm-wallet.pages.dev/">https://helm-wallet.pages.dev/</a></li>
           <li><a href="https://bordalix.gitlab.io/helm-wallet/">https://bordalix.gitlab.io/helm-wallet/</a></li>
@@ -286,13 +290,21 @@
         <h2>Run it</h2>
         <p>Run it locally in your computer is as easy as:</p>
         <pre>
-$ gh repo clone bordalix/helm-wallet
+$ git clone bordalix/helm-wallet
 $ cd helm-wallet
-$ yarn
-$ yarn start
+$ pnpm install
+$ pnpm start
         </pre>
+        <p>If you prefer Docker:</p>
+        <pre>
+$ git clone bordalix/helm-wallet
+$ cd helm-wallet
+$ docker build -t helm-wallet .
+$ docker run -p 8370:8370 helm-wallet
+        </pre>
+        <p>The app will be running on http://localhost:8370</p>
         <h2>Code</h2>
-        <p>Code is available at the following repos:</p>
+        <p>To minimize censorship, the code is available from several sources:</p>
         <ul>
           <li><a href="https://gitlab.com/bordalix/helm-wallet">https://gitlab.com/bordalix/helm-wallet</a></li>
           <li><a href="https://github.com/bordalix/helm-wallet">https://github.com/bordalix/helm-wallet</a></li>
@@ -300,7 +312,7 @@ $ yarn start
         </ul>
         <h1>Declaration of interest</h1>
         <p>I receive a small percentage of Boltz fees for all payments with Helm's referral id.</p>
-        <h1>FAQ</h1>
+        <h1 id="faq">FAQ</h1>
         <details>
           <summary>Why Liquid?</summary>
           <p>
